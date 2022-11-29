@@ -13,10 +13,14 @@ import static org.testng.AssertJUnit.assertEquals;
 
 public class TestChrome {
 
-    ChromeDriver driver = new ChromeDriver();
+    ChromeDriver driver;
 
     public static final String GOOGLE_URL = "https://www.google.lv/?hl=en";
 
+    @BeforeMethod
+    public void before(){
+        driver = new ChromeDriver();
+    }
     @AfterMethod
     public void tearDown() {
         driver.close();
